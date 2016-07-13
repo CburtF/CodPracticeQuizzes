@@ -6,9 +6,75 @@
 <body>
 
 <script type="text/javascript">
+
+function solution(N) {
+	var binaryNumber = [];
+    var maxZeros = 0;
+    
+    var binaryDigit;
+    
+    while(N>0) {
+     
+     binaryDigit = N % 2;
+     N = Math.floor(N/2);
+     binaryNumber.push(binaryDigit);
+	}
+
+	//binaryNumber = [1, 0, 1, 0, 0];
+
+	var binNumLength = binaryNumber.length;
+
+	binaryNumber.reverse();
+
+	console.log(binaryNumber);
+
+	for(var i=0; i<binNumLength; i++) {
+
+		var consequtiveZeros = 0;
+
+		if(binaryNumber[i + 1] != undefined) {
+
+			if(binaryNumber[i] == 1 && binaryNumber[i+1]  == 0) {
+
+				var consequtiveZeros = 1;
+				var flag = false;
+
+				for(var j=i+1; binaryNumber[j] != 1 && j <binNumLength; j++) {
+
+					if(binaryNumber[j+1] == 1) {
+						flag = true;
+
+					} else consequtiveZeros++;
+				
+				}
+
+				if(flag == false) {
+					consequtiveZeros = 0;	
+				}
+			}
+			
+		}
+
+		if(consequtiveZeros > maxZeros){
+			maxZeros = consequtiveZeros;
+		}
+
+		
+	}
 	
-	
+	return maxZeros;
+		
+}
+
+
+console.log(solution(529));
+console.log(solution(20));
+
+
 </script>
+
+Test Result - https://codility.com/demo/results/training7X2XHZ-WUQ/
+
 
 </body>
 </html>
