@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	function solution(A, K) {
+
+		if(A.length == 0 || A == null) {
+			return A;
+		} else {
+			while(K > 0) {
+				A.unshift(A.pop());
+				K--;
+			}
+
+			return A;
+
+			//console.log(A);
+		}
+	
+	}
+
+	A = [6, 7, 1, 2, 3, 4, 5];
+	K = 6;
+
+	console.log(solution(A, K));
+
+</script>
+
+https://codility.com/demo/results/training7NVH8U-VXP/
+
+
+
+
+</body>
+</html>
