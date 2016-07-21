@@ -2,4 +2,6 @@
 
 These are my solutions to practice quizzes at codility. 
 
-Codility Practice - https://codility.com/programmers/lessons/
+Codility Practice Quizzes - https://codility.com/programmers/lessons/
+
+Please don't use my solution.
